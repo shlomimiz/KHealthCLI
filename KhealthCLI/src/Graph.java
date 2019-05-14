@@ -32,17 +32,11 @@ public class Graph {
 
     public static void main(String[] args) {
 
-
-        Gson g = new Gson();
-
-        Graph graph;
-
-
-        System.out.println(System.getProperty("user.dir"));
-
         try (JsonReader reader = new JsonReader(new FileReader("src/graph.json"))) {
 
-            graph = g.fromJson(reader, Graph.class);
+            Gson g = new Gson();
+
+            Graph graph = g.fromJson(reader, Graph.class);
 
             Scanner scanner = new Scanner(System.in);
 
@@ -61,19 +55,17 @@ public class Graph {
 
                 String answer = scanner.nextLine();
 
-                answer  = String.join(",", answer.split(","));
+                answer = String.join("", answer.split(","));
 
                 vertex = graph.getEdges().get(vertex).getOrDefault(answer.trim(), 0);
-
             }
 
             System.out.println("Session is over! Thank you");
 
             scanner.close();
+
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
     }
 }
-;
