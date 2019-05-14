@@ -7,7 +7,7 @@
 
 
 ## To Run CLI: 
-### cd into cli & Type the following:
+### cd into KHealthCLI & Type the following:
 
 1.```javac -cp "/libs/gson.jar" *.java```
 2.```java -cp .:libs/gson.jar Graph```
